@@ -1,0 +1,222 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; background: #0f172a; color: #f8fafc; }
+
+.dashboard-container { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: 260px; min-width: 260px; background: #1e293b;
+    padding: 2rem 1.5rem; border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo { font-size: 1.8rem; font-weight: 800; color: #38bdf8; margin-bottom: 2rem; }
+
+.nav-links { list-style: none; padding: 0; }
+.nav-links a {
+    display: block; color: #94a3b8; text-decoration: none;
+    padding: 0.8rem; border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s;
+}
+.nav-links a:hover { background: rgba(56, 189, 248, 0.1); color: #38bdf8; }
+
+.main-content { flex: 1; padding: 40px; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.stats-card {
+    background: #1e293b; padding: 25px; border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.progress-container { background: #334155; height: 12px; border-radius: 10px; margin: 10px 0; overflow: hidden; }
+.progress-bar { background: linear-gradient(90deg, #38bdf8, #10b981); height: 100%; transition: width 0.5s; }
+
+.welcome-banner { background: #10b981; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; }
+/* --- AUTH PAGE GLOW-UP --- */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+}
+
+.auth-card {
+    background: #1e293b;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    color: #38bdf8;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+    font-size: 1rem;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #38bdf8, #10b981);
+    border: none;
+    border-radius: 10px;
+    color: #0f172a;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-card button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+.auth-card a {
+    color: #94a3b8;
+    text-decoration: none;
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-card a:hover { color: #38bdf8; }/* Cards now subtly grow and glow when hovered */
+.stats-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+    border-color: #38bdf8 !important;
+}
+
+/* Sidebar links slide slightly to the right */
+.nav-links a:hover {
+    padding-left: 20px;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+}
+.sidebar {
+    background: rgba(30, 41, 59, 0.7) !important; /* Semi-transparent */
+    backdrop-filter: blur(12px); /* Glass effect */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+}
+
+/* QOL: Active Link Highlighting */
+.nav-links a.active {
+    background: rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    border-left: 4px solid #38bdf8;
+}
+.progress-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+.quick-add-container button {
+    background: #38bdf8 !important;
+    color: #0f172a !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.quick-add-container button:hover {
+    background: #10b981 !important; /* Turns green on hover */
+    transform: scale(1.05);
+}
+.nav-links {
+    list-style: none; /* This removes those white dots */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-bottom: 8px;
+}.card-link { cursor: pointer; transition: 0.3s; }
+.card-link:hover { transform: translateY(-5px); border-color: #38bdf8; }
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+.badge-good { background: #10b981; color: white; }
+.badge-warn { background: #ef4444; color: white; }
+.badge-info { background: #38bdf8; color: #0f172a; }
+
+.btn-add {
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}.timer-display {
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    font-family: 'Courier New', Courier, monospace; /* Digital look */
+}
+
+#start-btn:hover {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Fix for the white input issue in your earlier screenshots */
+input[type="date"] {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #334155;
+    padding: 8px;
+    border-radius: 6px;
+    color-scheme: dark; /* Makes the calendar picker dark too! */
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto; /* Adds scroll if content is too long */
+    padding-bottom: 20px;
+}
+
+.nav-links li a:hover {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    border-radius: 8px;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garikhane | Technical Overview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --onyx: #0a0c10;
+            --glass-bg: #111418;
+            --border-glow: #21262d;
+            --electric-cyan: #00f2ff;
+            --muted-text: #8b949e;
+            --pure-white: #f0f6fc;
+        }
+
+        body { 
+            margin: 0; 
+            background: var(--onyx); 
+            color: var(--pure-white); 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            line-height: 1.8;
+        }
+
+        /* --- HERO --- */
+        .hero { 
+            padding: 140px 20px 100px; 
+            text-align: center; 
+            background: radial-gradient(circle at top, #1c2128 0%, #0a0c10 100%);
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .hero h1 { font-size: 4.5rem; font-weight: 800; margin: 0; letter-spacing: -3px; text-transform: uppercase; }
+        .hero p { color: var(--muted-text); font-size: 1.4rem; margin: 25px 0 50px; }
+
+        .btn-launch { 
+            background: var(--electric-cyan); 
+            color: var(--onyx); 
+            padding: 20px 60px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: 800; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block; 
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid var(--electric-cyan);
+        }
+
+        .btn-launch:hover { 
+            background: transparent;
+            color: var(--electric-cyan);
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.4); 
+            transform: translateY(-3px); 
+        }
+
+        /* --- CONTENT --- */
+        .container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+
+        .section { 
+            background: var(--glass-bg); 
+            padding: 50px; 
+            border-radius: 4px; 
+            margin-bottom: 40px; 
+            border: 1px solid var(--border-glow);
+            position: relative;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--electric-cyan);
+        }
+
+        h2 { font-size: 1.4rem; font-weight: 800; color: var(--electric-cyan); margin: 0 0 30px; text-transform: uppercase; letter-spacing: 3px; }
+
+        .description { font-size: 1.1rem; color: #c9d1d9; }
+        .description strong { color: var(--pure-white); }
+
+        /* --- FEATURE GRID --- */
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        .feature-card { border-left: 2px solid var(--border-glow); padding-left: 20px; transition: 0.3s; }
+        .feature-card:hover { border-left-color: var(--electric-cyan); }
+        .feature-card h4 { margin: 0 0 10px; font-size: 1.2rem; color: var(--pure-white); }
+        .feature-card p { margin: 0; font-size: 0.95rem; color: var(--muted-text); }
+
+        /* --- TECH BOXES --- */
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .tech-card { 
+            background: #0d1117; 
+            padding: 25px; 
+            border: 1px solid var(--border-glow);
+            text-align: center;
+        }
+        .tech-card strong { display: block; font-size: 1rem; color: var(--pure-white); margin-bottom: 5px; }
+        .tech-card small { color: var(--electric-cyan); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+
+        /* --- ARCHITECTURE LIST --- */
+        .arch-list { list-style: none; padding: 0; }
+        .arch-list li { margin-bottom: 15px; padding-left: 20px; border-left: 1px solid var(--border-glow); }
+        .arch-list strong { color: var(--pure-white); display: block; margin-bottom: 5px; }
+        .arch-list span { color: var(--muted-text); font-size: 0.95rem; }
+
+        footer { text-align: center; padding: 80px 20px; color: var(--muted-text); font-size: 0.8rem; letter-spacing: 2px; border-top: 1px solid var(--border-glow); }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Garikhane </h1>
+        <p>Advanced Integrated Academic Management Environment</p>
+        <a href="http://localhost/prodo/register.php" class="btn-launch">Launch Terminal</a>
+    </section>
+
+    <div class="container">
+        <div class="section">
+            <h2>Detailed Project Abstract</h2>
+            <div class="description">
+                <p><strong>Prodo</strong> was engineered to solve <strong>"Academic Fragmentation"</strong>—the stress caused by managing educational responsibilities across disconnected platforms. By centralizing schedules, tasks, and weighted grade tracking, Prodo allows students to focus on performance.</p>
+                <p>The application leverages a <strong>real-time data synchronization engine</strong>. When a student completes a task on the Kanban Board, the system triggers a server-side recalculation of their completion progress.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Optimized Capabilities</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📋 Kanban Board</h4>
+                    <p>Visual workflow management tracking assignment lifecycles from pending to archived.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 GPA Engine</h4>
+                    <p>Automated grade point calculation based on credit hours and custom scales.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⏱️ Focus Timer</h4>
+                    <p>Integrated Pomodoro logic designed to enhance student information retention.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔒 Note Vault</h4>
+                    <p>Secure, authenticated storage for academic documentation and class archives.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>System Infrastructure</h2>
+            <div class="tech-grid">
+                <div class="tech-card"><strong>HTML / CSS</strong><small>UI Layer/Front end</small></div>
+                <div class="tech-card"><strong>PHP</strong><small>Logic Layer</small></div>
+                <div class="tech-card"><strong>MySQL </strong><small>Database</small></div>
+                <div class="tech-card"><strong>JavaScript</strong><small>Interactive</small></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>System Architecture</h2>
+            <ul class="arch-list">
+                <li>
+                    <strong>Relational Database Layer</strong>
+                    <span>MySQL stores user data with strict foreign key constraints to ensure data integrity.</span>
+                </li>
+                <li>
+                    <strong>Secure Logic Layer</strong>
+                    <span>PHP-driven backend handles session security and BCRYPT password hashing.</span>
+                </li>
+                <li>
+                    <strong>Responsive UI Layer</strong>
+                    <span>Optimized Flexbox and Grid layouts provide a distraction-free student interface.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 PRODO ACADEMIC PROJECT | ALL SYSTEMS OPERATIONAL
+    </footer>
+
+</body>
+</html>
